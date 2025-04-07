@@ -1,0 +1,56 @@
+sendMessage scenarioScript_P1 sn/file
+sendMessage scenarioScript_P2 sn/file
+openTCP 9999
+wait 2000
+wait 3000
+lsMessages
+exit
+sendMessage scenarioScript_P1 sn/file
+sendMessage scenarioScript_P2 sn/file
+openTCP 9999
+wait 2000
+wait 3000
+lsMessages
+exit
+sendMessage scenarioScript_P1 sn/file
+sendMessage scenarioScript_P2 sn/file
+openTCP 9999
+wait 2000
+wait 3000
+lsMessages
+exit
+sendMessage scenarioScript_P1 sn/file
+sendMessage scenarioScript_P2 sn/file
+openTCP 9999
+wait 2000
+wait 3000
+lsMessages
+exit
+sendMessage scenarioScript_P1 sn/file
+sendMessage scenarioScript_P2 sn/file
+openTCP 9999
+wait 2000
+wait 3000
+lsMessages
+exit
+sendMessage scenarioScript_P1 sn/file
+sendMessage scenarioScript_P2 sn/file
+openTCP 9999
+wait 2000
+wait 3000
+lsMessages
+exit
+sendMessage scenarioScript_P1 sn/file
+sendMessage scenarioScript_P2 sn/file
+openTCP 9999
+wait 2000
+wait 3000
+lsMessages
+exit
+sendMessage scenarioScript_P1 sn/file
+sendMessage scenarioScript_P2 sn/file
+openTCP 9999
+wait 2000
+wait 3000
+lsMessages
+exit

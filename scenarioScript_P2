@@ -1,0 +1,5 @@
+sendMessage asapLogsP2.txt
+sendMessage MessengerLog_P2.txt
+connectTCP localhost 9999
+wait 500
+exit

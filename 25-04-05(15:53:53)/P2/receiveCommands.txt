@@ -1,0 +1,6 @@
+wait 1000
+connectTCP localhost 9999
+wait 500
+lsMessages
+wait 500
+exit

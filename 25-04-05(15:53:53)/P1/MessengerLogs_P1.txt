@@ -1,0 +1,45 @@
+Welcome to SharkNetMessenger version 0.1
+Welcome P1
+2025-04-05 15:53:54.019: created a new asap peer id for P1: P1_Ri1avHu0000P54
+type 'help' to see the list of commands
+
+Enter a (comma separated) command (list) and press ENTER > 2025-04-05 15:53:55.606: wait 1000 ms ...
+2025-04-05 15:53:56.607: resume
+
+Enter a (comma separated) command (list) and press ENTER > 
+Enter a (comma separated) command (list) and press ENTER > 2025-04-05 15:53:56.656: wait 500 ms ...
+2025-04-05 15:53:56.669: 
+new encounter to TestHost_gh1avHu0000kgC via internet
+2025-04-05 15:53:56.670: 
+Peer TestHost_gh1avHu0000kgC has not yet issued a certificate for you. You are connected now. A good time to ask for one?
+2025-04-05 15:53:56.722: 2messages received in channel sn://universal
+2025-04-05 15:53:57.162: resume
+
+Enter a (comma separated) command (list) and press ENTER > 2025-04-05 15:53:57.173: name: sharkNet | uri: sn://universal | #messages: 2 | age: unknown
+2025-04-05 15:53:57.180: list messages in channel: sn://universal
+#1 ---------------------------------------------------------------------------------
+content type: sn/file | file: scenarioScript_P1 (99 bytes) | saved to disc
+sender: TestHost_gh1avHu0000kgC | recipients: ANY_SHARKNET_PEER | time: 2025-04-05 15:53:55.815
+E2E security: encrypted: no | signed: yes | verified: no
+hoping list: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+0: sender: TestHost_gh1avHu0000kgC | P2P security: encrypted: no | verified: no | via: TCP
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/#1 --------------------------------------------------------------------------------
+#2 ---------------------------------------------------------------------------------
+content type: sn/file | file: scenarioScript_P2 (99 bytes) | saved to disc
+sender: TestHost_gh1avHu0000kgC | recipients: ANY_SHARKNET_PEER | time: 2025-04-05 15:53:55.849
+E2E security: encrypted: no | signed: yes | verified: no
+hoping list: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+0: sender: TestHost_gh1avHu0000kgC | P2P security: encrypted: no | verified: no | via: TCP
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/#2 --------------------------------------------------------------------------------
+
+
+Enter a (comma separated) command (list) and press ENTER > 2025-04-05 15:53:57.180: wait 500 ms ...
+2025-04-05 15:53:57.681: resume
+
+Enter a (comma separated) command (list) and press ENTER > 

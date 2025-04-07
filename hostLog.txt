@@ -1,0 +1,97 @@
+Welcome to SharkNetMessenger version 0.1
+Welcome TestHost
+2025-04-05 15:53:53.924: created a new asap peer id for TestHost: TestHost_gh1avHu0000kgC
+type 'help' to see the list of commands
+
+Enter a (comma separated) command (list) and press ENTER > 
+Enter a (comma separated) command (list) and press ENTER > 
+Enter a (comma separated) command (list) and press ENTER > 
+Enter a (comma separated) command (list) and press ENTER > 2025-04-05 15:53:55.910: wait 2000 ms ...
+2025-04-05 15:53:56.503: 
+new encounter to P2_mj1avHu0000B3E via internet
+2025-04-05 15:53:56.504: 
+Peer P2_mj1avHu0000B3E has not yet issued a certificate for you. You are connected now. A good time to ask for one?
+2025-04-05 15:53:56.658: 
+new encounter to P1_Ri1avHu0000P54 via internet
+2025-04-05 15:53:56.658: 
+Peer P1_Ri1avHu0000P54 has not yet issued a certificate for you. You are connected now. A good time to ask for one?
+2025-04-05 15:53:57.854: 
+new encounter to P1_Ri1avHu0000P54 via internet
+2025-04-05 15:53:57.854: 
+Peer P1_Ri1avHu0000P54 has not yet issued a certificate for you. You are connected now. A good time to ask for one?
+2025-04-05 15:53:57.914: resume
+
+Enter a (comma separated) command (list) and press ENTER > 2025-04-05 15:53:57.915: wait 3000 ms ...
+2025-04-05 15:53:59.109: 4messages received in channel sn://universal
+2025-04-05 15:53:59.124: 
+new encounter to P2_mj1avHu0000B3E via internet
+2025-04-05 15:53:59.124: 
+new encounter to P1_Ri1avHu0000P54 via internet
+2025-04-05 15:53:59.124: 
+Peer P2_mj1avHu0000B3E has not yet issued a certificate for you. You are connected now. A good time to ask for one?
+2025-04-05 15:53:59.125: 
+Peer P1_Ri1avHu0000P54 has not yet issued a certificate for you. You are connected now. A good time to ask for one?
+2025-04-05 15:53:59.174: 6messages received in channel sn://universal
+2025-04-05 15:53:59.933: 
+new encounter to P2_mj1avHu0000B3E via internet
+2025-04-05 15:53:59.933: 
+Peer P2_mj1avHu0000B3E has not yet issued a certificate for you. You are connected now. A good time to ask for one?
+2025-04-05 15:54:00.916: resume
+
+Enter a (comma separated) command (list) and press ENTER > 2025-04-05 15:54:00.925: name: sharkNet | uri: sn://universal | #messages: 6 | age: unknown
+2025-04-05 15:54:00.933: list messages in channel: sn://universal
+#1 ---------------------------------------------------------------------------------
+content type: sn/characters | 'asapLogsP2.txt'
+sender: P2_mj1avHu0000B3E | recipients: ANY_SHARKNET_PEER | time: 2025-04-05 15:53:58.660
+E2E security: encrypted: no | signed: yes | verified: no
+hoping list: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+0: sender: P2_mj1avHu0000B3E | P2P security: encrypted: no | verified: no | via: TCP
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/#1 --------------------------------------------------------------------------------
+#2 ---------------------------------------------------------------------------------
+content type: sn/characters | 'MessengerLog_P2.txt'
+sender: P2_mj1avHu0000B3E | recipients: ANY_SHARKNET_PEER | time: 2025-04-05 15:53:58.908
+E2E security: encrypted: no | signed: yes | verified: no
+hoping list: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+0: sender: P2_mj1avHu0000B3E | P2P security: encrypted: no | verified: no | via: TCP
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/#2 --------------------------------------------------------------------------------
+#3 ---------------------------------------------------------------------------------
+content type: sn/characters | 'asapLogsP1.txt'
+sender: P1_Ri1avHu0000P54 | recipients: ANY_SHARKNET_PEER | time: 2025-04-05 15:53:58.637
+E2E security: encrypted: no | signed: yes | verified: no
+hoping list: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+0: sender: P1_Ri1avHu0000P54 | P2P security: encrypted: no | verified: no | via: TCP
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/#3 --------------------------------------------------------------------------------
+#4 ---------------------------------------------------------------------------------
+content type: sn/characters | 'MessengerLog_P1.txt'
+sender: P1_Ri1avHu0000P54 | recipients: ANY_SHARKNET_PEER | time: 2025-04-05 15:53:58.842
+E2E security: encrypted: no | signed: yes | verified: no
+hoping list: 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+0: sender: P1_Ri1avHu0000P54 | P2P security: encrypted: no | verified: no | via: TCP
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/#4 --------------------------------------------------------------------------------
+#5 ---------------------------------------------------------------------------------
+content type: sn/file | file: scenarioScript_P1 (99 bytes) | already saved
+sender: you | recipients: ANY_SHARKNET_PEER | time: 2025-04-05 15:53:55.815
+E2E security: encrypted: no | signed: yes | verified: yes | ia (TestHost_gh1avHu0000kgC): 10 (perfect) 
+hoping list: no hops
+/#5 --------------------------------------------------------------------------------
+#6 ---------------------------------------------------------------------------------
+content type: sn/file | file: scenarioScript_P2 (99 bytes) | already saved
+sender: you | recipients: ANY_SHARKNET_PEER | time: 2025-04-05 15:53:55.849
+E2E security: encrypted: no | signed: yes | verified: yes | ia (TestHost_gh1avHu0000kgC): 10 (perfect) 
+hoping list: no hops
+/#6 --------------------------------------------------------------------------------
+
+
+Enter a (comma separated) command (list) and press ENTER > 

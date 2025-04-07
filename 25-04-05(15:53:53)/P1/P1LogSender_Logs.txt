@@ -1,0 +1,16 @@
+Welcome to SharkNetMessenger version 0.1
+Welcome P1
+2025-04-05 15:53:58.257: asap peer id for P1 is P1_Ri1avHu0000P54
+type 'help' to see the list of commands
+
+Enter a (comma separated) command (list) and press ENTER > 
+Enter a (comma separated) command (list) and press ENTER > 
+Enter a (comma separated) command (list) and press ENTER > 2025-04-05 15:53:59.054: 
+new encounter to TestHost_gh1avHu0000kgC via internet
+2025-04-05 15:53:59.055: 
+Peer TestHost_gh1avHu0000kgC has not yet issued a certificate for you. You are connected now. A good time to ask for one?
+
+Enter a (comma separated) command (list) and press ENTER > 2025-04-05 15:53:59.089: wait 500 ms ...
+2025-04-05 15:53:59.591: resume
+
+Enter a (comma separated) command (list) and press ENTER > 
