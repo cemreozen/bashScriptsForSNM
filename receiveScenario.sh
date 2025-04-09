@@ -8,21 +8,19 @@ peerName=$(basename $(pwd)) # how?????
 ### Test folder ###
 
 mkdir "$datum"
+cp ./sendLogs.sh $datum;
 cd "$datum"
 for (( i=1; i <= $peerCount; i++ )); do
 	mkdir P"$i";
-	cp ~/Desktop/bashScriptsSNM/receiveCommands.txt P$i;
-	cp ~/Desktop/bashScriptsSNM/SharkMessenger.jar P$i;
-	cp ~/Desktop/bashScriptsSNM/sendLogs.sh P$i;
+	cp ../receiveCommands.txt P$i;
+	cp ../SharkMessenger.jar P$i;
 	cd P$i;
-	cat receiveCommands.txt | java -jar SharkMessenger.jar P"$i" 2 > MessengerLogs_P"$i".txt &
+	cat receiveCommands.txt | java -jar SharkMessenger.jar P"$i" 2 > MessengerLog_P"$i".txt &
 	cd ..;
 done
-wait
-
-for (( i=1; i <= $peerCount; i++ )); do
-	cd P$i;
-	./sendLogs.sh &
-	cd ..;
-done
+sleep 3
 echo current dir: $(pwd) receiverSkript done
+wait
+sleep 3
+./sendLogs.sh;
+echo done;
