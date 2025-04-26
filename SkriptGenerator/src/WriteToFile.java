@@ -1,10 +1,10 @@
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 public interface WriteToFile {
 
-	File writeToFile(File file, FileWriter fileWriter) throws IOException;
+	void writeToFile(File file, FileOutputStream fos, String goal) throws IOException;
 	// tbc
 
 }

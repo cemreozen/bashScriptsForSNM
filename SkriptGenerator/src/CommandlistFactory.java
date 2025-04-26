@@ -2,7 +2,6 @@ import java.io.*;
 
 public class CommandlistFactory implements WriteToFile {
 
-    private FileWriter fileWriter;
     public static final String SEND_MESSAGE = "sendMessage";
     public static final String FORMAT_DESC_FILE = "sn/file";
     public static final String OPEN_TCP = "openTCP";
@@ -15,14 +14,13 @@ public class CommandlistFactory implements WriteToFile {
 
     public static final String HOST_ADDRESS = "localhost";
 
-    public CommandlistFactory(InfosheetParser infoSheetCommandComponents) throws IOException {
-        fileWriter = new FileWriter("commandlist.txt");
+    public CommandlistFactory(InfoSheetParser infoSheetCommandComponents) throws IOException {
+        OutputStream outputStream = new FileOutputStream("runScenario.sh");
     }
 
     @Override
-    public File writeToFile(File file, FileWriter fileWriter) throws IOException {
-        return null;
+    public void writeToFile(File file, FileOutputStream fos, String goal) throws IOException {
+        fos.write(goal.getBytes());
+        fos.close();
     }
-
-
 }

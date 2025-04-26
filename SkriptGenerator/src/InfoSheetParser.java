@@ -1,7 +1,13 @@
 import java.io.*;
 
-//default
-public class InfosheetParser {
+/**
+ * This class is responsible for parsing the info sheet and generating the command list for the peers.
+ * It reads the command list from a file and assigns the parameters to the corresponding variables.
+ * It also generates a command list for the peers to execute the test scenario.
+ * Alternatively, the test variables can be passed as command line arguments.
+ * @author Cemre
+ */
+public class InfoSheetParser {
     public static final int DEFAULT_PEER_COUNT = 5;
     public static final String DEFAULT_FILE_NAME = "100KB.txt";
     public static final long DEFAULT_FILE_SIZE = 102400;
@@ -17,7 +23,7 @@ public class InfosheetParser {
     BufferedReader bufferedReader;
 
 
-    public InfosheetParser(String fileNameInfoSheet) throws FileNotFoundException {
+    public InfoSheetParser(String fileNameInfoSheet) throws FileNotFoundException {
         this.bufferedReader = new BufferedReader(new FileReader(fileNameInfoSheet));
     }
 
@@ -53,6 +59,10 @@ public class InfosheetParser {
         this.scenarioIndex = scenarioIndex;
     }
 
+    /**
+     * Reads the command list from the given file and assigns the parameters to the corresponding variables.
+     * @throws IOException
+     */
     public void assignCommandListComponents() throws IOException {
         try {
             while (bufferedReader.readLine() != null) {
@@ -89,7 +99,11 @@ public class InfosheetParser {
         }
     }
 
-    // generate...
+    /**
+     * Generates a commandlist for the peers to execute the test scenario.
+     * @param peerIndex the index of the peer
+     * @return the commandlist as a string
+     */
     public String generateScenarioScript(int peerIndex) {
         StringBuilder stringBuilder = new StringBuilder();
         StringBuilder scenarioScript = stringBuilder.append(CommandlistFactory.WAIT + ' ' + 100 + " \n")
@@ -108,6 +122,10 @@ public class InfosheetParser {
         return scenarioScript.toString();
     }
 
+    /**
+     * Generates a test scenario to be distributed to all peers by the test host.
+     * @return the scenario as a string
+     */
     public String generateRunScenario() {
         StringBuilder stringBuilder = new StringBuilder();
         StringBuilder runScenario = stringBuilder.append(CommandlistFactory.CONNECT_TCP + " " + CommandlistFactory.HOST_ADDRESS + ' ' + CommandlistFactory.HOST_PORT)
@@ -118,6 +136,22 @@ public class InfosheetParser {
                 .append('\n')
                 .append(CommandlistFactory.EXIT);
         return runScenario.toString();
+    }
+
+    /**
+     * vielleicht ist die methode nicht in der richtigen Klasse.
+     * liest parameter ein und weist die den Variablen zu.
+     * @param args die eingabeparameter
+     */
+    public void argsParser(String[] args) {
+        if (args.length == 0) {
+            System.out.println("No arguments provided. Using default values.");
+        }
+        //todo: feste Reihenfolge -> doof
+        setScenarioIndex(Integer.parseInt(args[0]));
+        setPeerCount(Integer.parseInt(args[1]));
+        setFileSize(Long.parseLong(args[2]));
+        setFileNameToBeSent(this.fileSize + ".txt"); //todo, geht auch eleganter...
     }
 
     public String getFileNameToBeSent() { return fileNameToBeSent; }
