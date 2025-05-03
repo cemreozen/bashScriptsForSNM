@@ -4,13 +4,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class CommandlistFactoryTest {
+
+	String path;
 	public static void main(String[] args) {
 		try {
-			InfoSheetParser infoSheetParser = new InfoSheetParser("infoblah.txt");
-			CommandlistFactory commandlistFactory = new CommandlistFactory(infoSheetParser);
-			File file = new File("runScenario.txt");
-			FileWriter fileWriter = new FileWriter(file);
-			commandlistFactory.writeToFile(file, new FileOutputStream(file.getName()), "Test command");
+			CommandlistFactory commandlistFactory = new CommandlistFactory("SkriptGenerator/test/infoblah.txt");
+			for (int i = 1; i <= commandlistFactory.getPeerCount(); i++) {
+				File file = new File("runScenario" + i + ".txt");
+				System.out.println(file.getAbsolutePath());
+				commandlistFactory.writeToFile(file, new FileOutputStream(file.getName()), commandlistFactory.getInfoSheetParser().generateScenarioScript(i));
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

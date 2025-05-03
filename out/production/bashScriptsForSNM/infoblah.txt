@@ -1,0 +1,1 @@
+array liste fuer alle peers. fuer den 1. peer, alle x interm. peers und letzten.

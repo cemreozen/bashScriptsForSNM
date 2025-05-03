@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Objects;
 
 /**
  * This class is responsible for parsing the info sheet and generating the command list for the peers.
@@ -10,21 +11,26 @@ import java.io.*;
 public class InfoSheetParser {
     public static final int DEFAULT_PEER_COUNT = 5;
     public static final String DEFAULT_FILE_NAME = "100KB.txt";
-    public static final long DEFAULT_FILE_SIZE = 102400;
+    public static final String DEFAULT_FILE_SIZE = "102400";
     public static final int DEFAULT_SCENARIO_INDEX = 1; //TODO
 
     public static final String SCENARIO_HOST_NAME = "testHost"; //oder so, todo
 
     private int peerCount = DEFAULT_PEER_COUNT;
     private String fileNameToBeSent = DEFAULT_FILE_NAME;
-    private long fileSize = DEFAULT_FILE_SIZE;
+    private String fileSize = DEFAULT_FILE_SIZE;
     private int scenarioIndex = DEFAULT_SCENARIO_INDEX;
 
     BufferedReader bufferedReader;
 
 
-    public InfoSheetParser(String fileNameInfoSheet) throws FileNotFoundException {
-        this.bufferedReader = new BufferedReader(new FileReader(fileNameInfoSheet));
+    public InfoSheetParser(String pathInfoSheet) throws FileNotFoundException {
+        bufferedReader = new BufferedReader(new FileReader(pathInfoSheet));
+        try {
+            assignCommandListComponents();
+        } catch (IOException e) {
+            System.err.println("Error reading the info sheet: " + e.getMessage());
+        }
     }
 
     public void setFileNameToBeSent(String fileNameToBeSent) {
@@ -35,8 +41,9 @@ public class InfoSheetParser {
         this.fileNameToBeSent = fileNameToBeSent;
     }
 
-    public void setFileSize(long fileSize) {
-        if (fileSize <= 0) {
+    public void setFileSize(String fileSize) {
+        long fileSizeNumerical = Long.parseLong(fileSize.substring(0, fileSize.length()-2).trim());
+        if (fileSizeNumerical <= 0) {
             System.err.println("File size invalid. Using default file size: " + DEFAULT_FILE_SIZE);
             return;
         }
@@ -65,28 +72,30 @@ public class InfoSheetParser {
      */
     public void assignCommandListComponents() throws IOException {
         try {
-            while (bufferedReader.readLine() != null) {
-                String keyValuePair = bufferedReader.readLine();
-                String key = keyValuePair.substring(0, keyValuePair.indexOf(":")).trim();
-                String value = keyValuePair.substring(keyValuePair.indexOf(":") + 1).trim();
+                String nextLine = bufferedReader.readLine();
+            while (nextLine != null) {
+                    String keyValuePair = nextLine;
+                    String key = keyValuePair.substring(0, keyValuePair.indexOf(":")).trim();
+                    String value = keyValuePair.substring(keyValuePair.indexOf(":") + 1).trim();
 
-                switch (key.toLowerCase()) {
-                    case "peer count":
-                        setPeerCount(Integer.parseInt(value));
-                        break;
-                    case "scenario index":
-                        setScenarioIndex(Integer.parseInt(value));
-                        break;
-                    case "file name":
-                        setFileNameToBeSent(value);
-                        break;
-                    case "file size":
-                        setFileSize(Long.parseLong(value));
-                        break;
-                    default:
-                        System.err.println("Unknown key: " + key);
-                        break;
-                }
+                    switch (key.toLowerCase()) {
+                        case "peer count":
+                            setPeerCount(Integer.parseInt(value));
+                            break;
+                        case "scenario index":
+                            setScenarioIndex(Integer.parseInt(value));
+                            break;
+                        case "file name":
+                            setFileNameToBeSent(value);
+                            break;
+                        case "file size":
+                            setFileSize(value);
+                            break;
+                        default:
+                            System.err.println("Unknown key: " + key);
+                            break;
+                    }
+                    nextLine = bufferedReader.readLine();
             }
 
             //nicht so, mit key-value Paar -> substring -> trim etc.
@@ -118,6 +127,12 @@ public class InfoSheetParser {
                 .append(".txt ")
                 .append(CommandlistFactory.FORMAT_DESC_FILE)
                 .append('\n')
+                .append(CommandlistFactory.CONNECT_TCP + ' ')
+                .append(CommandlistFactory.HOST_ADDRESS + ' ')
+                .append(CommandlistFactory.HOST_PORT)
+                .append('\n')
+                .append(CommandlistFactory.WAIT + ' ' + 1000)
+                .append('\n')
                 .append(CommandlistFactory.EXIT);
         return scenarioScript.toString();
     }
@@ -138,22 +153,6 @@ public class InfoSheetParser {
         return runScenario.toString();
     }
 
-    /**
-     * vielleicht ist die methode nicht in der richtigen Klasse.
-     * liest parameter ein und weist die den Variablen zu.
-     * @param args die eingabeparameter
-     */
-    public void argsParser(String[] args) {
-        if (args.length == 0) {
-            System.out.println("No arguments provided. Using default values.");
-        }
-        //todo: feste Reihenfolge -> doof
-        setScenarioIndex(Integer.parseInt(args[0]));
-        setPeerCount(Integer.parseInt(args[1]));
-        setFileSize(Long.parseLong(args[2]));
-        setFileNameToBeSent(this.fileSize + ".txt"); //todo, geht auch eleganter...
-    }
-
     public String getFileNameToBeSent() { return fileNameToBeSent; }
 
     public int getPeerCount() {
@@ -164,7 +163,7 @@ public class InfoSheetParser {
         return scenarioIndex;
     }
 
-    public long getFileSize() {
+    public String getFileSize() {
         return fileSize;
     }
 }

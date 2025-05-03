@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SharkMessenger">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/SharkMessenger.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
