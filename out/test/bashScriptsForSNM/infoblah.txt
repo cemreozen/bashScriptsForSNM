@@ -1,4 +1,4 @@
 Peer count: 2
-scenario index: 1
+scenario index: 0
 File name: 100KB.txt
 File size: 100KB
